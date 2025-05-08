@@ -11,6 +11,7 @@ import com.rockabyesbj.core.cache.storage.UserSessionRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 import javax.inject.Singleton
 import dagger.hilt.components.SingletonComponent
 
@@ -42,6 +43,11 @@ abstract class AuthCoreBindingModule {
         impl: MsalTokenProvider
     ): IAuthSessionManager
 
+    @Module
+    @InstallIn(ViewModelComponent::class)
+    object HomeModule {
+        // TODO: Add dependencies as needed
+    }
 
 }
 

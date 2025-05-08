@@ -33,9 +33,6 @@ android {
         jvmTarget = "17"
     }
 
-    sourceSets {
-        getByName("main").java.srcDirs("src/main/kotlin", "src/main/java") //<-- required for Java to construct BuildConfig in AppLogging
-    }
 }
 
 dependencies {
@@ -56,7 +53,7 @@ dependencies {
     api(libs.dagger.hilt.android)
     api(libs.dagger.hilt.core)
     ksp(libs.dagger.hilt.compiler)
-    api(libs.androidx.navigation.compose)
+    api(libs.androidx.hilt.navigation.compose)
     implementation(libs.javax.inject)
 
 }

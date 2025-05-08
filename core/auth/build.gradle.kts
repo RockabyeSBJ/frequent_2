@@ -33,9 +33,6 @@ android {
         jvmTarget = "11"
     }
 
-    sourceSets {
-        getByName("main").java.srcDirs("src/main/kotlin", "src/main/java") //<-- required for Java to construct BuildConfig in AppLogging
-    }
 }
 
 dependencies {
@@ -44,7 +41,7 @@ dependencies {
     implementation(libs.dagger.hilt.android)  //<--was formerly api
     implementation(libs.dagger.hilt.core)   //<--was formerly api
     ksp(libs.dagger.hilt.compiler)
-    implementation(libs.androidx.navigation.compose) //<--was formerly api
+    implementation(libs.androidx.hilt.navigation.compose) //<--was formerly api
     implementation(libs.microsoft.identity.client) {
         exclude(group = "com.microsoft.device.display", module = "display-mask")
         }

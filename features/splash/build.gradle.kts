@@ -1,13 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
     kotlin("android")
-    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.devtools.ksp)
     alias(libs.plugins.hilt.android)
 }
 
 android {
-    namespace = "com.rockabyesbj.splash"
+    namespace = "com.rockabyesbj.features.splash"
     compileSdk = 35
 
     defaultConfig {
@@ -38,9 +38,6 @@ android {
         jvmTarget = "17"
     }
 
-    sourceSets {
-        getByName("main").java.srcDirs("src/main/kotlin", "src/main/java") //<-- required for Java to construct BuildConfig in AppLogging
-    }
 }
 
 
@@ -49,7 +46,7 @@ dependencies {
     api(libs.dagger.hilt.android)
     api(libs.dagger.hilt.core)
     ksp(libs.dagger.hilt.compiler)
-    api(libs.androidx.navigation.compose)
+    api(libs.androidx.hilt.navigation.compose)
     implementation(project(":core:uicommon"))
     implementation(project(":core:common"))
     implementation(project(":core:navigation"))

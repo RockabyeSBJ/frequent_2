@@ -1,9 +1,10 @@
 plugins {
-    alias(libs.plugins.android.application)  // Android Compiler
-    alias(libs.plugins.compose.compiler)    // Compose Compiler
-    alias(libs.plugins.devtools.ksp)         // KSP plugin for Annotation processing
-    alias(libs.plugins.hilt.android)         // Hilt plugin application.
-    kotlin("android")
+
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.devtools.ksp)
+    alias(libs.plugins.hilt.android)
 
 }
 
@@ -21,6 +22,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = "2.1.20"
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -29,6 +34,11 @@ android {
                 "proguard-rules.pro"
             )
         }
+
+    buildFeatures {
+        buildConfig = true // <- FORCE it on
+    }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -40,14 +50,10 @@ android {
         jvmTarget = "17"
     }
 
-    sourceSets {
-        getByName("main").java.srcDirs("src/main/kotlin", "src/main/java") //<-- required for Java to construct BuildConfig in AppLogging
-    }
-
-
     buildFeatures {
         compose = true
     }
+
 }
 
 dependencies {
@@ -65,11 +71,14 @@ dependencies {
     implementation(project(":features:splash"))
     implementation(project(":features:login"))
     //implementation(project(":features:profile"))
-
-    //required in this module, as setContent{} lives in MainActivity, here
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt.navigation.compose)
+
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
     implementation(libs.dagger.hilt.android)
     implementation(libs.dagger.hilt.core)
     ksp(libs.dagger.hilt.compiler)

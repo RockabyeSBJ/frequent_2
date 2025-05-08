@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.navigation.compose.rememberNavController
-import com.rockabyesbj.uicommon.theme.FrequentTheme
+import com.rockabyesbj.core.uicommon.theme.FrequentTheme
 import com.rockabyesbj.app.viewmodel.MainViewModel
 import com.rockabyesbj.app.navigation.AppNavGraph
 import dagger.hilt.android.AndroidEntryPoint

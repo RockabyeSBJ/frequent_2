@@ -3,11 +3,11 @@ plugins {
     kotlin("android")
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.devtools.ksp)
-    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.rockabyesbj.login"
+    namespace = "com.rockabyesbj.features.login"
     compileSdk = 35
 
     defaultConfig {
@@ -34,9 +34,6 @@ android {
         jvmTarget = "17"
     }
 
-    sourceSets {
-        getByName("main").java.srcDirs("src/main/kotlin", "src/main/java") //<-- required for Java to construct BuildConfig in AppLogging
-    }
 }
 
 dependencies {

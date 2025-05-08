@@ -1,13 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.compose.compiler)  // <-- must be applied for every module that uses Compose
+    alias(libs.plugins.kotlin.compose)  // <-- must be applied for every module that uses Compose
     kotlin("android")  // <--- libs.plugins.kotlin.android is dead, after a long frustrating exploration. Fucking confusing-ass shit.
     alias(libs.plugins.hilt.android) //requires KSP and Dagger
     alias(libs.plugins.devtools.ksp) // required by KSP
 }
 
 android {
-    namespace = "com.rockabyesbj.uicommon"
+    namespace = "com.rockabyesbj.core.uicommon"
     compileSdk = 35
 
     defaultConfig {
@@ -39,9 +39,6 @@ android {
         jvmTarget = "17"
     }
 
-    sourceSets {
-        getByName("main").java.srcDirs("src/main/kotlin", "src/main/java") //<-- required for Java to construct BuildConfig in AppLogging
-    }
 }
 
 dependencies {

@@ -33,9 +33,6 @@ android {
         jvmTarget = "11"
     }
 
-    sourceSets {
-        getByName("main").java.srcDirs("src/main/kotlin", "src/main/java") //<-- required for Java to construct BuildConfig in AppLogging
-    }
 }
 
 dependencies {

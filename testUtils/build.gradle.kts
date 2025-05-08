@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.devtools.ksp)         // KSP plugin for Annotation processing
     alias(libs.plugins.hilt.android)         // Hilt plugin application.
     alias(libs.plugins.kotlin.android)      // Applies Kotlin support, compiler
-    alias(libs.plugins.compose.compiler)    // Applies the compiler
+    alias(libs.plugins.kotlin.compose)    // Applies the compiler
 }
 
 android {

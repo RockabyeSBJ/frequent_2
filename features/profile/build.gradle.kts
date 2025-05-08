@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.devtools.ksp)         // KSP plugin for Annotation processing
     alias(libs.plugins.android.library)    // Android plugin application.
     alias(libs.plugins.hilt.android)
-    alias(libs.plugins.compose.compiler)// Hilt plugin application.
+    alias(libs.plugins.kotlin.compose)// Hilt plugin application.
     kotlin("android")      // Kotlin compiler
 }
 
@@ -39,9 +39,6 @@ android {
         jvmTarget = "17"
     }
 
-    sourceSets {
-        getByName("main").java.srcDirs("src/main/kotlin", "src/main/java") //<-- required for Java to construct BuildConfig in AppLogging
-    }
 }
 
 
@@ -50,7 +47,7 @@ dependencies {
     api(libs.dagger.hilt.android)
     api(libs.dagger.hilt.core)
     ksp(libs.dagger.hilt.compiler)
-    api(libs.androidx.navigation.compose)
+    api(libs.androidx.hilt.navigation.compose)
 
     implementation(project(":core"))
     implementation(project(":core:auth"))

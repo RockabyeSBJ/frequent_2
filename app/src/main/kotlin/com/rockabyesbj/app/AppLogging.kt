@@ -22,7 +22,7 @@ object AppLogging {
         }
     }
 }
-/*  Eventually, you can use BuildConfig to contain the below values, currently in AuthFeatureBindingModule
+/*  Eventually, you can use BuildConfig to contain the below values
 android {
     defaultConfig {
         buildConfigField("String", "AUTHORITY_URL", "\"https://frequentb2c.b2clogin.com/...\"")
