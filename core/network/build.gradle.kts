@@ -50,7 +50,7 @@ dependencies {
     implementation(libs.androidx.appcompat) // TODO find/create common module, you keep repeating yourself
     implementation(libs.microsoft.identity.client){
         exclude(group = "com.microsoft.device.display", module = "display-mask")
-    }
+        }
     implementation(libs.okhttp3)
     implementation(libs.retrofit2)
     implementation(libs.retrofit2.moshi)

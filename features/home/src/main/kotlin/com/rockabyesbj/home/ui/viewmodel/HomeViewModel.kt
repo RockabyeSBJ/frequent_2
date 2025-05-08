@@ -5,7 +5,6 @@ import androidx.lifecycle.viewModelScope
 import com.rockabyesbj.core.common.model.UserProfile
 import com.rockabyesbj.core.error.AppError
 import com.rockabyesbj.core.error.ErrorHandler
-//import com.rockabyesbj.core.utils.CoroutineUtil
 import com.rockabyesbj.home.ui.state.Deal
 import com.rockabyesbj.home.ui.state.HomeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel

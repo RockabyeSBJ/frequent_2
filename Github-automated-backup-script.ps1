@@ -1,5 +1,5 @@
 # Path to your project
-Set-Location "C:\Users\meanm\Frequent_app"
+Set-Location "C:\Users\meanm\Frequent_2"
 
 # Stage all changes
 git add .

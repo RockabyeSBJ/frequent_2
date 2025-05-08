@@ -1,4 +1,4 @@
-package com.rockabyesbj.login.ui.state
+package com.rockabyesbj.features.login.ui.state
 
 sealed interface LoginUiState {
     object Idle : LoginUiState

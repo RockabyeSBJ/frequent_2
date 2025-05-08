@@ -1,4 +1,4 @@
-package com.rockabyesbj.login.navigation
+package com.rockabyesbj.features.login.navigation
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController

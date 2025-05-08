@@ -48,7 +48,9 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.microsoft.identity.client)
+    implementation(libs.microsoft.identity.client) {
+        exclude(group = "com.microsoft.device.display", module = "display-mask")
+        }
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

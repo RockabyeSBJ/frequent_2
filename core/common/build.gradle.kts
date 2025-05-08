@@ -22,5 +22,5 @@ dependencies {
     implementation(libs.org.json)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.serialization.json)
-
+    implementation((libs.retrofit2))
 }

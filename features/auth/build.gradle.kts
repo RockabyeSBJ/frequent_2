@@ -44,15 +44,15 @@ dependencies {
 
     implementation(libs.microsoft.identity.client){
             exclude(group = "com.microsoft.device.display", module = "display-mask")
-    }
+            }
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.javax.inject)
 
-    api(libs.dagger.hilt.android)
-    api(libs.dagger.hilt.core)
+    implementation(libs.dagger.hilt.android) //<-- was formerly api
+    implementation(libs.dagger.hilt.core) //<-- was formerly api
     ksp(libs.dagger.hilt.compiler)
-    api(libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.compose) //<-- was formerly api
 
     implementation(libs.okhttp3)
     implementation(project(":core"))

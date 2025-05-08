@@ -1,4 +1,4 @@
-package com.rockabyesbj.network.dto
+package com.rockabyesbj.core.network.dto
 
 data class BusinessDto(
     val id: String,

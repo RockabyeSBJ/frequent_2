@@ -1,4 +1,4 @@
-package com.rockabyesbj.core.auth.di
+package com.rockabyesbj.di
 
 import android.app.Application
 import com.microsoft.identity.client.*

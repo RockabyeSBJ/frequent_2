@@ -1,4 +1,4 @@
-package com.rockabyesbj.login.ui.viewmodel
+package com.rockabyesbj.features.login.ui.viewmodel
 
 import android.app.Activity
 import androidx.lifecycle.ViewModel
@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.rockabyesbj.core.error.AppError
 import com.rockabyesbj.core.error.ErrorHandler
 import com.rockabyesbj.core.auth.interfaces.IAuthSessionManager
-import com.rockabyesbj.login.ui.state.LoginUiState
+import com.rockabyesbj.features.login.ui.state.LoginUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

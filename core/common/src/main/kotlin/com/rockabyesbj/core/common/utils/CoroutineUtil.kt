@@ -1,4 +1,4 @@
-package com.rockabyesbj.core.utils
+package com.rockabyesbj.core.common.utils
 
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext

@@ -3,7 +3,7 @@ package com.rockabyesbj.app.navigation
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.rockabyesbj.login.navigation.LoginFeatureEntry
+import com.rockabyesbj.features.login.navigation.LoginFeatureEntry
 import com.rockabyesbj.features.splash.navigation.SplashFeatureEntry
 
 @Composable

@@ -59,14 +59,14 @@ dependencies {
     implementation(project(":core:common"))
     implementation(project(":core:error"))
     implementation(project(":core:uicommon"))
-    implementation(project(":core:security"))
+    //implementation(project(":core:security"))
     implementation(project(":core:navigation"))
-    implementation(project(":di"))  // <-- new way to avoid feature:profile and feature:auth as dependencies in core
+    //implementation(project(":di"))  // <-- new way to avoid feature:profile and feature:auth as dependencies in core
     implementation(project(":features:auth"))
-    implementation(project(":features:home"))
+    //implementation(project(":features:home"))
     implementation(project(":features:splash"))
     implementation(project(":features:login"))
-    implementation(project(":features:profile"))
+    //implementation(project(":features:profile"))
 
     //required in this module, as setContent{} lives in MainActivity, here
     implementation(libs.androidx.activity.compose)
@@ -74,10 +74,10 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.dagger.hilt.android)
     implementation(libs.dagger.hilt.core)
+    ksp(libs.dagger.hilt.compiler)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
-    //implementation(libs.microsoft.identity.client) {
-    //    exclude(group = "com.microsoft.device.display", module = "display-mask")
-    //}
-    ksp(libs.dagger.hilt.compiler)
+    implementation(libs.microsoft.identity.client) {
+        exclude(group = "com.microsoft.device.display", module = "display-mask")
+    }
 }
