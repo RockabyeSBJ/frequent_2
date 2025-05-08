@@ -1,0 +1,12 @@
+{
+  "client_id": "eb128900-7950-484e-891c-216b14d87ac6",
+  "authorization_user_agent": "DEFAULT",
+  "redirect_uri": "msaleb128900-7950-484e-891c-216b14d87ac6://auth",
+  "authorities": [
+    {
+      "type": "B2C",
+      "authority_url": "https://frequentb2c.b2clogin.com/frequentb2c.onmicrosoft.com/B2C_1_signupsignin",
+      "default": true
+    }
+  ]
+}

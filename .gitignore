@@ -1,0 +1,9 @@
+/build
+# SpecStory explanation file
+.specstory/.what-is-this.md
+/build
+/.idea
+/local.properties
+*.iml
+.DS_Store
+*.keystore

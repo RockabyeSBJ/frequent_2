@@ -1,0 +1,51 @@
+plugins {
+    alias(libs.plugins.android.library)
+    kotlin("android")
+    alias(libs.plugins.devtools.ksp)
+    alias(libs.plugins.hilt.android)
+}
+
+android {
+    namespace = "com.rockabyesbj.features"
+    compileSdk = 35
+
+    defaultConfig {
+        minSdk = 26
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    //sourceSets {
+    //    getByName("main").java.srcDirs("src/main/kotlin")
+    //    getByName("test").java.srcDirs("src/test/kotlin")
+    //    getByName("androidTest").java.srcDirs("src/androidTest/kotlin")
+    //}
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    sourceSets {
+        getByName("main").java.srcDirs("src/main/kotlin")
+        getByName("test").java.srcDirs("src/test/kotlin")
+        getByName("androidTest").java.srcDirs("src/androidTest/kotlin")
+    }
+}
+
+dependencies {
+
+    api(libs.dagger.hilt.android)
+    api(libs.dagger.hilt.core)
+    ksp(libs.dagger.hilt.compiler)
+    api(libs.androidx.navigation.compose)
+
+}

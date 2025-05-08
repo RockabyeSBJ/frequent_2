@@ -1,0 +1,62 @@
+plugins {
+    alias(libs.plugins.android.library)
+    kotlin("android")
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.devtools.ksp)
+    alias(libs.plugins.hilt.android)
+}
+
+android {
+    namespace = "com.rockabyesbj.splash"
+    compileSdk = 35
+
+    defaultConfig {
+        minSdk = 26
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    //sourceSets {
+    //    getByName("main").java.srcDirs("src/main/kotlin")
+    //    getByName("test").java.srcDirs("src/test/kotlin")
+    //    getByName("androidTest").java.srcDirs("src/androidTest/kotlin")
+    //}
+}
+
+
+dependencies {
+
+    api(libs.dagger.hilt.android)
+    api(libs.dagger.hilt.core)
+    ksp(libs.dagger.hilt.compiler)
+    api(libs.androidx.navigation.compose)
+    implementation(project(":core:uicommon"))
+    implementation(project(":core:common"))
+    implementation(project(":core:navigation"))
+    implementation(project(":core"))
+    implementation(project(":core:auth"))
+    implementation(project(":core:error"))
+
+}
