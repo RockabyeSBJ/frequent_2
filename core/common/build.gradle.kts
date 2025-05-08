@@ -11,11 +11,9 @@ kotlin {
     }
 }
 
-//sourceSets {
-//    getByName("main").java.srcDirs("src/main/kotlin")
-//    getByName("test").java.srcDirs("src/test/kotlin")
-//    getByName("androidTest").java.srcDirs("src/androidTest/kotlin")
-//}
+sourceSets {
+    getByName("main").java.srcDirs("src/main/kotlin", "src/main/java") //<-- required for Java to construct BuildConfig in AppLogging
+}
 
 dependencies {
 

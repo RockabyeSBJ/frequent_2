@@ -94,7 +94,8 @@ class MsalTokenProvider @Inject constructor(
                     Log.d(TAG, "User signed out")
                     cachedToken = null
                     _authState.value = false
-                    cont.resume(Unit) // ✅ return Unit
+                    cont.resume(Unit)  // ✅ return Unit
+
                 }
 
                 override fun onError(exception: MsalException) {
@@ -106,19 +107,21 @@ class MsalTokenProvider @Inject constructor(
     }
 
     override suspend fun restoreSession() {
-        // Optional: implement later or delegate to ISessionManager
         getAccessToken()
     }
 
     override fun getUserSession(): UserSession? {
         return cachedToken?.takeIf { !JwtUtil.isTokenExpired(it) }?.let {
-            UserSession(accessToken = it, refreshToken = "", createdAt = System.currentTimeMillis())
+            UserSession(
+                accessToken = it,
+                refreshToken = "",
+                createdAt = System.currentTimeMillis()
+            )
         }
     }
 
-    // Stub: for now always return UI required
     private suspend fun acquireTokenSilently(): TokenResult {
-        // TODO: Reintroduce MSAL silent token logic using callbacks
+        // TODO: Implement MSAL silent token logic
         return TokenResult.UiRequired
     }
 }

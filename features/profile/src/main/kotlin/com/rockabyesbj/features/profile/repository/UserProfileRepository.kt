@@ -7,7 +7,7 @@ import com.rockabyesbj.core.cache.entity.UserProfileEntity
 import com.rockabyesbj.core.common.model.UserProfile
 import com.rockabyesbj.core.network.api.ApiService
 import com.rockabyesbj.core.network.dto.UserProfileDto
-import com.rockabyesbj.core.utils.safeApiCall
+import com.rockabyesbj.core.common.utils.safeApiCall
 import javax.inject.Inject
 import javax.inject.Singleton
 

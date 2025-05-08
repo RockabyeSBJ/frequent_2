@@ -22,3 +22,12 @@ object AppLogging {
         }
     }
 }
+/*  Eventually, you can use BuildConfig to contain the below values, currently in AuthFeatureBindingModule
+android {
+    defaultConfig {
+        buildConfigField("String", "AUTHORITY_URL", "\"https://frequentb2c.b2clogin.com/...\"")
+        buildConfigField("String", "CLIENT_ID", "\"your-client-id-here\"")
+    }
+}
+and use them like this: val authority = BuildConfig.AUTHORITY_URL, for example
+ */

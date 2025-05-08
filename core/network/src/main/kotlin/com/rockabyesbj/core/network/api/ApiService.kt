@@ -1,6 +1,6 @@
 package com.rockabyesbj.core.network.api
 
-import com.rockabyesbj.network.dto.*
+import com.rockabyesbj.core.network.dto.*
 import retrofit2.http.*
 
 /** Central Retrofit service interface for your backend API. */
